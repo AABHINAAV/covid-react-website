@@ -1,0 +1,236 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:arial;
+    box-sizing:border-box;
+    cursor: default;
+}
+body{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    height:90vh;
+    width:80vw;
+    display: flex;
+    border:4px rgb(100, 24, 223) solid;
+    border-radius:0.5rem;
+    background:#eee;
+}
+.left{
+    width:65%; 
+    display: flex;
+    flex-direction: column;
+    background:#eee;
+    padding:1em 2em;
+    border-radius:0.5rem;
+}
+.ldiv1{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+#input-country{
+    height:80%;
+    width:50%;
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    padding:0.5em;
+    font-size:1.1em;
+    background-color: white;
+    box-shadow:2px 2px 10px rgba(0,0,0,0.5);
+}
+.btn{
+    height:3.5rem;
+    width:10rem;
+    border:1px rgb(100, 24, 223) solid;
+    border-radius:1rem;
+    line-height: calc(3.5rem - 2px);
+    text-align:center;
+    color:rgb(100, 24, 223);
+    font-size:1.5rem;
+    cursor: pointer;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.3s ease;
+    z-index: 0;
+}
+.wave{
+    position:absolute;
+    top:100%;
+    height:5rem;
+    width:5rem;
+    border-radius: 50%;
+    background:rgb(100, 24, 223);
+    animation:move 0.7s infinite linear;
+    transition:all 0.3s ease;
+    z-index: -1;
+}
+.wave1{
+    left:-30%;
+}
+.wave2{
+    left:0%;
+}
+.wave3{
+    left:30%;
+}
+.wave4{
+    left:60%;
+}
+.wave5{
+    left:90%;
+}
+@keyframes move {
+    0%{transform:translateX(-50%);}
+    100%{transform:translateX(10%);}
+}
+.btn:active{
+    transform:scale(0.8);
+}
+.btn:hover{
+    color:white;
+    border-color:#eee;
+}
+.btn:hover .wave{
+    top:5%;
+}
+.tableheaders{
+    margin-top:2rem;
+    width:calc(100% - 1.4rem);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom:2px solid rgb(182, 170, 170);
+}
+.tableheaders div{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight:bold;
+    width:20%;
+}
+.tableheaders div:first-child{
+    width:40%;
+}
+.tableHolder{
+    margin-top:0.5rem;
+    width:100%;
+    height:100%;
+    overflow-y: scroll;
+}
+.tableHolder::-webkit-scrollbar{
+    width:1.4rem;
+    padding:1rem;
+}
+.tableHolder::-webkit-scrollbar-track{
+    border:#eee solid;
+    border-width:0 0.6rem;
+    background:linear-gradient(0deg,#fc45c6,#213fc5);
+}
+.tableHolder::-webkit-scrollbar-thumb{
+    border-radius:1rem;
+    background:linear-gradient(45deg,#6bf819,#f3dd16);
+}
+#all-info{
+    height:100%;
+    width:100%;
+    background:#eee;
+    font-size:1.1rem;
+    border:none;
+    text-align:center;
+    border-spacing: 0 0.5rem;
+    cursor:pointer;
+}
+#all-info tr:hover{
+    box-shadow: 0 0 20px red;
+}
+#all-info tr td{
+    cursor:pointer;
+    width:20%;
+}
+#all-info tr td:first-child{
+    font-weight:bold;
+    text-transform: uppercase;
+    width: 40%;
+    background:#7a4a91;
+    color:white;
+}
+#all-info tr td:nth-child(2){
+    background:#4bb7d8;
+}
+#all-info tr td:nth-child(3){
+    background:#9cc950;
+}
+#all-info tr td:nth-child(4){
+    background:#f36e23;
+}
+.right{
+    width:35%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:rgb(100, 24, 223);
+    outline:none;
+    padding:1rem 0;
+}
+.country{
+    width:fit-content;
+    font-size:1.4rem;
+    background:#eee;
+    padding:0.2rem 1rem 0.2rem 0.5rem;
+    position: relative;
+    z-index: 0;
+}
+.country::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:calc(100% - 1rem);
+    height: 100%;
+    width:2rem;
+    border-radius:0 0.2rem 0 0;
+    background:#eee;
+    transform:skew(-45deg);
+    z-index: -1;
+}
+.right-heading{
+    text-align:center;
+    margin:1rem 1rem 0 1rem;
+    color:white;
+    font-size:1.5rem;
+    letter-spacing:1px;
+    border-bottom:2px rgb(197, 192, 192) solid;
+}
+.specificDataBoxes{
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.specificDataBoxes > div{
+    width:90%;
+    padding:0.5rem 1rem;
+    border-radius:6px;
+    background:white;
+}
+.specificDataBoxes > div > div{
+    margin:0.3rem 0;
+}
+.box-heading{
+    font-size:1.3rem;
+    font-weight: 600;
+    color:rgb(0, 0, 255);
+    border-bottom:2px grey solid;
+}
+.specificDataBoxes > div >div:nth-child(2) , .specificDataBoxes > div >div:nth-child(3){
+    font-weight: bold;
+}
+.specificDataBoxes span , .specificDataBoxes > div >div:nth-child(3) span{
+    color:red;
+    font-weight: normal;
+}
